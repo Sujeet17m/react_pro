@@ -2,16 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 
 function App() {
-  const [Score, _setScore] = useState(100);
+  const[Val,setVal]=useState(12);
   return (
     <div>
-      <h1>{Score}</h1>
-      <button className='bg-blue-500 text-white px-4 py-2 rounded ' onClick={()=>{
-        _setScore(Score+1)
-      }}>Increase</button>
-      <button className='bg-red-500 text-white px-4 py-2 rounded' onClick={()=>{
-        _setScore(Score-1)
-      }}>Decrease</button>
+      <h1>{Val}</h1>
+      <button onClick={()=>setVal((prev)=>prev-1)} className='px-3 py-1 bg-blue-400 rounded-full'>Change Karo</button>
     </div>
   )
 }
