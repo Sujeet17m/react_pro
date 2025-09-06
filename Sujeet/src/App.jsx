@@ -2,11 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 
 function App() {
-  const[Val,setVal]=useState(12);
+  const[val,setVal] =useState({name:"sujeet", isBanned:false});
   return (
     <div>
-      <h1>{Val}</h1>
-      <button onClick={()=>setVal((prev)=>prev-1)} className='px-3 py-1 bg-blue-400 rounded-full'>Change Karo</button>
+      <h1>name: {val.name}</h1>
+      <h1>isBanned: {val.isBanned.toString()}</h1>
+      <button onClick={()=>setVal({...val, isBanned: !val.isBanned})} className='px-3 py-1 bg-blue-400'>CHANGE</button>
     </div>
   )
 }
