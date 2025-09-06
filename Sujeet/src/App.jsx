@@ -2,15 +2,39 @@ import React from 'react'
 import { useState } from 'react'
 
 function App() {
-  const[val,setVal] = useState([1,2,3,4,5])
+  const [todos, setTodos] = useState([
+    { id: 1, text: "Learn React", completed: false },
+    { id: 2, text: "Master useState", completed: true }
+  ]);
+
+  function toggleTodo(id) {
+    setTodos(prev =>
+      prev.map(todo =>
+        todo.id === id
+          ? { ...todo, completed: !todo.completed } // flip completed
+          : todo
+      )
+    );
+  }
+
   return (
     <div>
-      {val.map((item)=><h1 key={item}>{item}</h1>)}
-      <button onClick={()=> setVal(prev => prev.filter((item,index)=> index!==2))} className='px-2 py-4 bg-blue-400' >Remove 3</button>
-      <button onClick={()=> setVal(prev => prev.filter(item => item%2 !==0))} className='px-2 py-4 bg-red-400' >Remove even</button>
+      <h1>Todo List</h1>
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id}>
+            <span style={{ textDecoration: todo.completed ? "line-through" : "none" }}>
+              {todo.text}
+            </span>
+            <button onClick={() => toggleTodo(todo.id)}>
+              {todo.completed ? "Undo" : "Complete"}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
 
