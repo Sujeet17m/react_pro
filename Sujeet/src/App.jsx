@@ -7,6 +7,9 @@ function App() {
     <div>
       {val.map((item)=><h1 key={item}>{item}</h1>)}
       <button onClick={()=>setVal([...val,val.length+1])}>Add Number</button>
+      <button onClick={() => setVal(()=>{
+        return val.filter((item , index)=> index!== val.length-1)
+      })} className='px-2 py-1 text-xs text-white rounded-full bg-blue-500'>Sub Number</button>
     </div>
   )
 }
