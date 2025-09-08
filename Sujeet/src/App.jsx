@@ -6,8 +6,8 @@ function App() {
 
   return (
     <>
-    <Card text="Know More" />
-    <Card text="Submit" />
+    <Card text="Know More" color="bg-blue-600" />
+    <Card text="Submit" color="bg-red-600" />
     </>
     
   );

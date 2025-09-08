@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
-function Card({ text }) {
+function Card({ text,color }) {
 
 
   return (
-    <button className="px-3 py-1 bg-blue-300 rounded-md">{text}</button>
+    <button className={`px-3 py-1 ${color} text-zinc-100 text-xs rounded-md `}>{text}</button>
   );
 }
 
