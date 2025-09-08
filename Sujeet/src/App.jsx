@@ -5,8 +5,11 @@ function App() {
 
 
   return (
-    <Card>
-    </Card>
+    <>
+    <Card text="Know More" />
+    <Card text="Submit" />
+    </>
+    
   );
 }
 
