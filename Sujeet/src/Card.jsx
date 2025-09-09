@@ -11,7 +11,7 @@ function Card({image, name, profession}) {
       <div className="w-full p-3"></div>
         <h3 className="ml-4 mb-2 text-xl font-semibold" >{name}</h3>
         <h5 className="ml-4 text-xs" >{profession}</h5>
-        <button className="mt-4 mb-2 ml-2 px-3 py-1 text-xs text-white bg-blue-500 font-semibold rounded-md">Add Friend</button>
+        <button onClick={() => alert("Adding as a friend")} className="mt-4 mb-2 ml-2 px-3 py-1 text-xs text-white bg-blue-500 font-semibold rounded-md">Add Friend</button>
     </div>
   );
 }
