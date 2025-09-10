@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
-function Card({image, name, profession}) {
+function Card({values, index,handleClick }) {
+  const {name, profession, image, friends} = values;
 
 
   return (
@@ -11,7 +12,7 @@ function Card({image, name, profession}) {
       <div className="w-full p-3"></div>
         <h3 className="ml-4 mb-2 text-xl font-semibold" >{name}</h3>
         <h5 className="ml-4 text-xs" >{profession}</h5>
-        <button onClick={() => alert("Adding as a friend")} className="mt-4 mb-2 ml-2 px-3 py-1 text-xs text-white bg-blue-500 font-semibold rounded-md">Add Friend</button>
+        <button onClick={() => {handleClick(index)}} className={`mt-4 mb-2 ml-2 px-3 py-1 text-xs text-white ${friends ? "bg-green-600" : "bg-blue-500"} font-semibold rounded-md`}>{friends === true ? "Friends":"Add Friend"}</button>
     </div>
   );
 }
